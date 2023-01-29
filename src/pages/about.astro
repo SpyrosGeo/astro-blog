@@ -1,0 +1,28 @@
+---
+const pageTitle = Astro.url.pathname
+const identity = {
+    firstName:'Spyros',
+    country:'Greece',
+    occupation:'Frond-end Developer',
+    hobbies:["making musing",'reading','coding']
+}
+const skills = ['Angular','React','TypeScript','Svelte','Nginx','Astro']
+---
+<html lang="en">
+  <head>
+    <meta charset ="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Astro</title>
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <a href="/blog/">Blog</a>
+    <h1>{pageTitle} me!</h1>
+    <p>Hello my name is {identity.firstName} and I'm a {identity.occupation}!</p>
+    <p>skills</p>
+    <ul>
+        {skills.map((skill:string)=> <li>{skill}</li>)}
+    </ul>
+  </body>
+</html>
